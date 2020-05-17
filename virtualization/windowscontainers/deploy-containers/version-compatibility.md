@@ -6,108 +6,91 @@ author: taylorb-microsoft
 ---
 # Windows container version compatibility
 
-Windows Server 2016 and Windows 10 Anniversary Update (both version 14393) were the first Windows releases that could build and run Windows Server containers. Containers built using these versions can run on newer releases such as Windows Server version 1709, but there are a few things you need to know before you start.
+Windows Server 2016 and Windows 10 Anniversary Update (both version 14393) were the first Windows releases that could build and run Windows Server containers. Containers built using these versions can run on newer releases, but there are a few things you need to know before you start.
 
 As we've been improving the Windows container features, we've had to make some changes that can affect compatibility. Older containers will run the same on newer hosts with [Hyper-V isolation](../manage-containers/hyperv-container.md), and will use the same (older) kernel version. However, if you want to run a container based on a newer Windows build, it can only run on the newer host build.
 
->[!NOTE]
-> \* Windows Server, version 1709 is no longer supported. For more information, see [Base image servicing lifecycles](base-image-lifecycle.md).
+## Windows Server host OS compatibility
 
-## Windows Server, version 1903 host OS compatibility
+<!-- start tab view -->
+# [Windows Server, version 1909](#tab/windows-server-1909)
 
-|Container OS|Supports Hyper-V isolation|Supports process isolation|
+|Container base image OS version|Supports Hyper-V isolation|Supports process isolation|
 |---|:---:|:---:|
-|Windows Server, version 1903|Yes|Yes|
-|Windows Server 2019|Yes|No|
-|Windows Server, version 1803|Yes|No|
-|Windows Server, version 1709*|Yes|No|
-|Windows Server 2016|Yes|No|
+|Windows Server, version 1909|&#10004;|&#10004;|
+|Windows Server, version 1903|&#10004;|&#10060;|
+|Windows Server 2019|&#10004;|&#10060;|
+|Windows Server 2016|&#10004;|&#10060;|
 
-## Windows Server 2019 host OS compatibility
+# [Windows Server, version 1903](#tab/windows-server-1903)
 
-|Container OS|Supports Hyper-V isolation|Supports process isolation|
+|Container base image OS version|Supports Hyper-V isolation|Supports process isolation|
 |---|:---:|:---:|
-|Windows Server, version 1903|No|No|
-|Windows Server 2019|Yes|Yes|
-|Windows Server, version 1803|Yes|No|
-|Windows Server, version 1709*|Yes|No|
-|Windows Server 2016|Yes|No|
+|Windows Server, version 1909|&#10060;|&#10060;|
+|Windows Server, version 1903|&#10004;|&#10004;|
+|Windows Server 2019|&#10004;|&#10060;|
+|Windows Server 2016|&#10004;|&#10060;|
 
-## Windows Server, version 1803 host OS compatibility
+# [Windows Server 2019](#tab/windows-server-2019)
 
-|Container OS|Supports Hyper-V isolation|Supports process isolation|
+|Container base image OS version|Supports Hyper-V isolation|Supports process isolation|
 |---|:---:|:---:|
-|Windows Server, version 1903|No|No|
-|Windows Server 2019|No|No|
-|Windows Server, version 1803|Yes|Yes|
-|Windows Server, version 1709*|Yes|No|
-|Windows Server 2016|Yes|No|
+|Windows Server, version 1909|&#10060;|&#10060;|
+|Windows Server, version 1903|&#10060;|&#10060;|
+|Windows Server 2019|&#10004;|&#10004;|
+|Windows Server 2016|&#10004;|&#10060;|
 
-## Windows Server, version 1709 host OS compatibility*
+# [Windows Server 2016](#tab/windows-server-2016)
 
-|Container OS|Supports Hyper-V isolation|Supports process isolation|
+|Container base image OS version|Supports Hyper-V isolation|Supports process isolation|
 |---|:---:|:---:|
-|Windows Server, version 1903|No|No|
-|Windows Server 2019|No|No|
-|Windows Server, version 1803|No|No|
-|Windows Server, version 1709*|Yes|Yes|
-|Windows Server 2016|Yes|No|
+|Windows Server, version 1909|&#10060;|&#10060;|
+|Windows Server, version 1903|&#10060;|&#10060;|
+|Windows Server 2019|&#10060;|&#10060;|
+|Windows Server 2016|&#10004;|&#10004;|
 
-## Windows Server 2016 host OS compatibility
+---
+<!-- stop tab view -->
 
-|Container OS|Supports Hyper-V isolation|Supports process isolation|
+## Windows 10 host OS compatibility
+
+<!-- start tab view -->
+
+# [Windows 10, version 1909](#tab/windows-10-1909)
+
+|Container base image OS version|Supports Hyper-V isolation|Supports process isolation|
 |---|:---:|:---:|
-|Windows Server 2019, version 1903|No|No|
-|Windows Server 2019|No|No|
-|Windows Server, version 1803|No|No|
-|Windows Server, version 1709*|No|No|
-|Windows Server 2016|Yes|Yes|
+|Windows Server, version 1909|&#10004;|&#10060;|
+|Windows Server, version 1903|&#10004;|&#10060;|
+|Windows Server 2019|&#10004;|&#10060;|
+|Windows Server 2016|&#10004;|&#10060;|
 
-## Windows 10, version 1903 host OS compatibility
+# [Windows 10, version 1903](#tab/windows-10-1903)
 
-|Container OS|Supports Hyper-V isolation|Supports process isolation|
+|Container base image OS version|Supports Hyper-V isolation|Supports process isolation|
 |---|:---:|:---:|
-|Windows Server, version 1903|Yes|No|
-|Windows Server 2019|Yes|No|
-|Windows Server, version 1803|Yes|No|
-|Windows Server, version 1709*|Yes|No|
-|Windows Server 2016|Yes|No|
+|Windows Server, version 1909|&#10060;|&#10060;|
+|Windows Server, version 1903|&#10004;|&#10060;|
+|Windows Server 2019|&#10004;|&#10060;|
+|Windows Server 2016|&#10004;|&#10060;|
 
-## Windows 10, version 1809 host OS compatibility
+# [Windows 10, version 1809](#tab/windows-10-1809)
 
-|Container OS|Supports Hyper-V isolation|Supports process isolation|
+|Container base image OS version|Supports Hyper-V isolation|Supports process isolation|
 |---|:---:|:---:|
-|Windows Server, version 1903|No|No|
-|Windows Server 2019|Yes|No|
-|Windows Server, version 1803|Yes|No|
-|Windows Server, version 1709*|Yes|No|
-|Windows Server 2016|Yes|No|
+|Windows Server, version 1909|&#10060;|&#10060;|
+|Windows Server, version 1903|&#10060;|&#10060;|
+|Windows Server 2019|&#10004;|&#10060;|
+|Windows Server 2016|&#10004;|&#10060;|
 
-## Windows 10, version 1803 host OS compatibility
-
-|Container OS|Supports Hyper-V isolation|Supports process isolation|
-|---|:---:|:---:|
-|Windows Serve, version 1903|No|No|
-|Windows Server 2019|No|No|
-|Windows Server, version 1803|Yes|No||
-|Windows Server, version 1709*|Yes|No|
-|Windows Server 2016|Yes|No|
-
-## Windows 10 Fall Creators Update host OS compatibility
-
-|Container OS|Supports Hyper-V isolation|Supports process isolation|
-|---|:---:|:---:|
-|Windows Server, version 1903|No|No|
-|Windows Server 2019|No|No|
-|Windows Server, version 1803|No|No|
-|Windows Server, version 1709*|Yes|No|
-|Windows Server 2016|Yes|No|
+---
+<!-- stop tab view -->
 
 ## Matching container host version with container image versions
 
 ### Windows Server containers
 
-Because Windows Server containers and the underlying host share a single kernel, the container’s base image must match that of the host. If the versions are different, the container may start, but full functionally isn't guaranteed. The Windows operating system has four levels of versioning: major, minor, build and revision. For example, version 10.0.14393.103 would have a major version of 10, a minor version of 0, a build number of 14393, and a revision number of 103. The build number only changes when new versions of the OS are published, such as version 1709, 1803, Fall Creators' Update, and so on. The revision number is updated as Windows updates are applied.
+Because Windows Server containers and the underlying host share a single kernel, the container's base image OS version must match that of the host. If the versions are different, the container may start, but full functionally isn't guaranteed. The Windows operating system has four levels of versioning: major, minor, build and revision. For example, version 10.0.14393.103 would have a major version of 10, a minor version of 0, a build number of 14393, and a revision number of 103. The build number only changes when new versions of the OS are published, such as version 1709, 1903, and so on. The revision number is updated as Windows updates are applied.
 
 #### Build number (new release of Windows)
 
@@ -115,15 +98,22 @@ Windows Server containers are blocked from starting when the build number betwee
 
 #### Revision number (patching)
 
-Windows Server containers aren't blocked from starting when the revision numbers of the container host and the container image are different. For example, if the container host is version 10.0.14393.1914 (Windows Server 2016 with KB4051033 applied) and the container image is version 10.0.14393.1944 (Windows Server 2016 with KB4053579 applied), then the image will still start even though their revision numbers are different.
+Windows Server containers currently don't support scenarios where Windows Server 2016-based containers run in a system where the revision numbers of the container host and the container image are different. For example, if the container host is version 10.0.14393.**1914** (Windows Server 2016 with KB4051033 applied) and the container image is version 10.0.14393.**1944** (Windows Server 2016 with KB4053579 applied), then the image might not start.
 
-For Windows Server 2016-based hosts or images, the container image’s revision must match the host to be in a supported configuration. However, for hosts or images using Windows Server version 1709 and higher, this rule doesn't apply, and the host and container image need not have matching revisions. We recommend you keep your systems up-to-date with the latest patches and updates.
+However, for hosts or images using Windows Server version 1809 and later, this rule doesn't apply, and the host and container image don't need to have matching revisions.
+
+We recommend you keep your systems (host and container) up-to-date with the latest patches and updates to stay secure.
+
+>[!NOTE]
+>You might encounter issues when using Windows Server containers with the February 11, 2020 security update release (also called "2B") or later monthly security update releases. See [this article](https://support.microsoft.com/help/4542617/you-might-encounter-issues-when-using-windows-server-containers-with-t) for more details.  
+>
+>We strongly recommend you update both your host and containers with the latest patches and updates to stay secure and compatible. For important guidance for how to update Windows containers, see [Update Windows Server containers](update-containers.md).
 
 #### Practical application
 
 Example 1:  The container host is running Windows Server 2016 with KB4041691 applied. Any Windows Server container deployed to this host must be based on the version 10.0.14393.1770 container base images. If you apply KB4053579 to the host container, you must also update the images to make sure the host container supports them.
 
-Example 2: The container host is running Windows Server version 1709 with KB4043961 applied. Any Windows Server container deployed to this host must be based on a Windows Server version 1709 (10.0.16299) container base image, but doesn't need to match the host KB. If KB4054517 is applied to the host, the container images will still be supported, but we recommend you update them to address any potential security issues.
+Example 2: The container host is running Windows Server version 1809 with KB4534273 applied. Any Windows Server container deployed to this host must be based on a Windows Server version 1809 (10.0.17763) container base image, but doesn't need to match the host KB. If KB4534273 is applied to the host, the container images will still be supported, but we recommend you update them to address any potential security issues.
 
 #### Querying version
 
@@ -148,7 +138,7 @@ For example:
 C:\>reg query "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion" /v BuildLabEx
 ```
 
-```batch
+```powershell
 Windows PowerShell
 Copyright (C) 2016 Microsoft Corporation. All rights reserved.
 
@@ -185,28 +175,28 @@ There are three ways you can resolve this error:
 
 You must know which version you need to use for your container. For example, if you want Windows Server version 1809 as your container OS and want to have the latest patches for it, you should use the tag `1809` when specifying which version of the base OS container images you want, like so:
 
-``` dockerfile
+```dockerfile
 FROM mcr.microsoft.com/windows/nanoserver:1809
 ...
 ```
 
 However, if you want a specific patch of Windows Server version 1809, you can specify the KB number in the tag. For example, to get a Nano Server base OS container image from Windows Server version 1809 with the KB4493509 applied to it, you would specify it like so:
 
-``` dockerfile
+```dockerfile
 FROM mcr.microsoft.com/windows/nanoserver:1809-KB4493509
 ...
 ```
 
 You can also specify the exact patches you need with the schema we have used previously, by specifying the OS version in the tag:
 
-``` dockerfile
+```dockerfile
 FROM mcr.microsoft.com/windows/nanoserver:10.0.17763.437
 ...
 ```
 
 The Server Core base images based on Windows Server 2019 and Windows Server 2016 are [Long-Term Servicing Channel (LTSC)](https://docs.microsoft.com/windows-server/get-started-19/servicing-channels-19#long-term-servicing-channel-ltsc) releases. If you for instance want Windows Server 2019 as your Server Core image's container OS and want to have the latest patches for it, you can specify LTSC releases like so:
 
-``` dockerfile
+```dockerfile
 FROM mcr.microsoft.com/windows/servercore:ltsc2019
 ...
 ```

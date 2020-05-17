@@ -34,9 +34,12 @@ The Windows container image [EULA](../images-eula.md) describes a usage that dep
 |Windows Server Standard                                         |Unlimited                                          |2                                                  |
 |Windows Server Datacenter                                       |Unlimited                                          |Unlimited                                          |
 |Windows 10 Pro and Enterprise                                   |Unlimited *(for test or development purposes only)*|Unlimited *(for test or development purposes only)*|
-|Windows 10 IoT Core and Enterprise)                             |Unlimited *(for test or development purposes only)*|Unlimited *(for test or development purposes only)*|
+|Windows 10 IoT Core and Enterprise                             |Unlimited*                                         |Unlimited*                                          |
 
-Windows Server container image usage is determined by reading the number of virtualization guests supported for that [edition](/windows-server/get-started-19/editions-comparison-19.md). Production usage of containers on an IoT edition of Windows is depends on additional license restrictions. Please read the [container image EULA](../images-eula.md) to understand exactly what is permitted and what is not.
+Windows Server container image usage is determined by reading the number of virtualization guests supported for that [edition](/windows-server/get-started-19/editions-comparison-19.md). <br/>
+
+>[!NOTE]
+>\*Production usage of containers on an IoT edition of Windows depend on if you have agreed to the Microsoft Commercial Terms of Use for Windows 10 Core Runtime Images or the Windows 10 IoT Enterprise Device License (“Windows IoT Commercial Agreement”). Additional terms and restrictions in the Windows IoT Commercial Agreements apply to your use of Container Image in a production environment. Please read the [container image EULA](../images-eula.md) to understand exactly what is permitted and what is not.
 
 ## As a developer, do I have to rewrite my app for each type of container?
 
@@ -46,14 +49,14 @@ A developer can create a container image using a Windows Server container and de
 
 Windows Server containers offer greater density and performance for when speed is key, such as lower spin-up time and faster runtime performance compared to nested configurations. Hyper-V isolation, true to its name, offers greater isolation, ensuring that code running in one container can't compromise or impact the host operating system or other containers running on the same host. This is useful for multitenant scenarios with requirements for hosting untrusted code, including SaaS applications and compute hosting.
 
-## Can I run Windows containers in process-isolated mode on Windows 10 Enterprise or Professional?
+## Can I run Windows containers in process-isolated mode on Windows 10?
 
-Starting with the Windows 10 October 2018 update, you can run a Windows container with process isolation, but you must first directly request process isolation by using the `--isolation=process` flag when running your containers with `docker run`.
+Starting with the Windows 10 October 2018 update, you can run a Windows container with process isolation, but you must first directly request process isolation by using the `--isolation=process` flag when running your containers with `docker run`. Process-isolation is compatible on Windows 10 Pro, Windows 10 Enterprise, Windows 10 IoT Core and Windows 10 IoT Enterprise.
 
 If you want to run your Windows containers this way, you'll need to make sure your host is running Windows 10 build 17763+ and you have a Docker version with Engine 18.09 or newer.
 
 > [!WARNING]
-> This feature is only meant for development and testing. You should continue to use Windows Server as the host for production deployments. By using this feature, you must also ensure that your host and container version tags match, otherwise the container may fail to start or exhibit undefined behavior.
+> Aside from on IoT Core and IoT Enterprise hosts (after accepting additional terms and restrictions), this feature is only meant for development and testing. You should continue to use Windows Server as the host for production deployments. By using this feature, you must also ensure that your host and container version tags match, otherwise the container may fail to start or exhibit undefined behavior.
 
 ## How do I make my container images available on air-gapped machines?
 

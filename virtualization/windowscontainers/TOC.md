@@ -35,6 +35,7 @@
 ### [Container Base Images](manage-containers/container-base-images.md)
 ### [Isolation Modes](manage-containers/hyperv-container.md)
 ### [Version compatibility](deploy-containers/version-compatibility.md)
+### [Update containers](deploy-containers/update-containers.md)
 ### [Resource controls](manage-containers/resource-controls.md)
 ## Docker
 ### [Docker Engine on Windows](manage-docker/configure-docker-daemon.md)
@@ -49,7 +50,7 @@
 #### [Join Linux workers](kubernetes/joining-linux-workers.md)
 #### [Deploy Kubernetes resources](kubernetes/deploying-resources.md)
 #### [Troubleshooting](kubernetes/common-problems.md)
-#### [Windows services on Kubernetes](kubernetes/kube-windows-services.md)
+#### [Kubernetes as a Windows service](kubernetes/kube-windows-services.md)
 #### [Compile Kubernetes binaries](kubernetes/compiling-kubernetes-binaries.md)
 ### Service Fabric
 #### [Service Fabric and Containers](/azure/service-fabric/service-fabric-containers-overview)

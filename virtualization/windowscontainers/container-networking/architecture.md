@@ -52,7 +52,7 @@ The Host Networking Service (HNS) and the Host Compute Service (HCS) work togeth
 - Default NAT network: HNS creates WinNAT port forwarding rules / mappings with corresponding Windows Firewall ALLOW rules
 - All other networks: HNS utilizes the Virtual Filtering Platform (VFP) for policy creation
     - This includes: load balancing, ACLs, encapsulation, etc.
-    - Look for our HNS APIs and schema **to be published soon**.
+    - Look for our HNS APIs and schema published [here](https://docs.microsoft.com/en-us/windows-server/networking/technologies/hcn/hcn-top)
 
 ![text](media/HNS-Management-Stack.png)
 
@@ -63,7 +63,7 @@ The following networking options are currently **NOT** supported on Windows:
 - Windows containers attached to l2bridge, NAT, and overlay networks do not support communicating over the IPv6 stack.
 - Encrypted container communication via IPsec.
 - HTTP proxy support for containers.
-- Attaching endpoints to running in Hyper-V isolation (hot-add).
+- [Host mode](https://docs.docker.com/ee/ucp/interlock/config/host-mode-networking/) networking 
 - Networking on virtualized Azure infrastructure via the transparent network driver.
 
 | Command        | Unsupported option   |
